@@ -1,0 +1,7 @@
+{
+    "cmake.generator": "Unix Makefiles",
+    "files.associations": {
+        "*.hta": "html",
+        "imgui-sfml.h": "c"
+    }
+}
