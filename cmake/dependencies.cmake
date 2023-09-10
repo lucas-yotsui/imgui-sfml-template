@@ -64,11 +64,15 @@ function(fetchGoogleTest)
         URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
     )
     FetchContent_MakeAvailable(googletest)
+    
+    set(THREADS_PREFER_PTHREAD_FLAG ON)
+    find_package(Threads REQUIRED)
 
     target_link_libraries(${CMAKE_PROJECT_NAME}_test
         ${REMOTE_LIBS}
         GTest::gtest_main
         GTest::gmock_main
+        Threads::Threads
     )
 endfunction()
 
